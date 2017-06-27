@@ -3,23 +3,33 @@ import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
+import { UsersPageModule } from '../pages/users/users.module';
+import { ShopPageModule } from '../pages/shop/shop.module';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
+import { UserPage } from "../pages/users/user/user";
+import {BuyoutPage} from "../pages/buyout/buyout";
 
 @NgModule({
   declarations: [
     MyApp,
-    HomePage
+    HomePage,
+    UserPage,
+    BuyoutPage,
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    UsersPageModule,
+    ShopPageModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HomePage
+    HomePage,
+    UserPage,
+    BuyoutPage,
   ],
   providers: [
     StatusBar,
